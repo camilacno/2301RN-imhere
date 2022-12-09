@@ -1,32 +1,67 @@
-import { StatusBar } from 'expo-status-bar'
-import { Text, View, TextInput, TouchableOpacity } from 'react-native'
+import {
+  ScrollView,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from 'react-native'
+
 import { Participant } from './components/Participant'
 
 import { styles } from './HomeStyles'
 
 export function Home() {
-  function handleAddParticipant() {
-    console.log('teste')
+  const participants = [
+    'Camila',
+    'Lívia',
+    'Raquel',
+    'Sabrina',
+    'Rebeca',
+    'Pedro',
+    'Davi',
+    'Nathália',
+    'Suely',
+    'Lourdes',
+    'Adriana',
+  ]
+
+  function handleParticipantAdd() {
+    console.log('Você clicou no botão de Adicionar!')
+  }
+
+  function handleParticipantRemove(name: string) {
+    console.log(`Você está removendoo o participante ${name}`)
   }
 
   return (
     <View style={styles.container}>
-      <Text>Hello world</Text>
-      <StatusBar style='auto' />
+      <Text style={styles.eventName}>Nome do evento</Text>
+
+      <Text style={styles.eventDate}>Sexta, 4 de Novembro de 2022.</Text>
 
       <View style={styles.form}>
         <TextInput
           style={styles.input}
           placeholder='Nome do participante'
-          placeholderTextColor='#6b6b6b'
+          placeholderTextColor='#6B6B6B'
         />
-        <TouchableOpacity style={styles.button} onPress={handleAddParticipant}>
+
+        <TouchableOpacity style={styles.button} onPress={handleParticipantAdd}>
           <Text style={styles.buttonText}>+</Text>
         </TouchableOpacity>
       </View>
 
-      <Participant />
-      <Participant />
+      <ScrollView showsVerticalScrollIndicator={false}>
+        {participants.map((participant, i) => {
+          return (
+            <Participant
+              key={i}
+              name={participant}
+              onRemove={() => handleParticipantRemove(participant)}
+            />
+          )
+        })}
+      </ScrollView>
     </View>
   )
 }
