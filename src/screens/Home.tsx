@@ -46,7 +46,7 @@ export function Home() {
       </View>
 
       <FlatList
-        data={[]}
+        data={participants}
         keyExtractor={(item) => item}
         showsVerticalScrollIndicator={false}
         renderItem={({ item }) => (
