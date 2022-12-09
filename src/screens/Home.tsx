@@ -1,12 +1,6 @@
 import { StatusBar } from 'expo-status-bar'
-import {
-  Text,
-  View,
-  TextInput,
-  TouchableOpacity,
-  SafeAreaView,
-} from 'react-native'
-import { Participant } from '../components/Participant'
+import { Text, View, TextInput, TouchableOpacity } from 'react-native'
+import { Participant } from './components/Participant'
 
 import { styles } from './HomeStyles'
 

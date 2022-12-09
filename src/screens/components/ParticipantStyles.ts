@@ -2,17 +2,17 @@ import { StyleSheet } from 'react-native'
 
 export const styles = StyleSheet.create({
   container: {
-    width: '100%',
+    alignItems: 'center',
     backgroundColor: '#1F1E25',
     borderRadius: 5,
     flexDirection: 'row',
-    alignItems: 'center',
     marginBottom: 10,
+    width: '100%',
   },
   name: {
-    flex: 1,
-    fontSize: 16,
     color: '#FFF',
+    fontSize: 16,
+    flex: 1,
     marginLeft: 16,
   },
   buttonText: {
@@ -20,11 +20,11 @@ export const styles = StyleSheet.create({
     fontSize: 24,
   },
   button: {
-    width: 56,
-    height: 56,
-    borderRadius: 5,
-    backgroundColor: '#E23C44',
     alignItems: 'center',
+    backgroundColor: '#E23C44',
+    borderRadius: 5,
+    height: 56,
     justifyContent: 'center',
+    width: 56,
   },
 })
