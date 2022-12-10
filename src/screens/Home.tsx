@@ -8,9 +8,9 @@ import {
   Alert,
 } from 'react-native'
 
-import { Participant } from './components/Participant'
+import { Participant } from '../components/Participant'
 
-import { styles } from './../styles/HomeStyles'
+import { styles } from './../styles/screens/HomeStyles'
 
 export function Home() {
   const [participants, setParticipants] = useState<string[]>(['Helena'])
